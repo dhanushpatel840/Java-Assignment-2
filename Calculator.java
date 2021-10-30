@@ -10,7 +10,7 @@ class calculator {
         System.out.println("3 for Multiplication");
         System.out.println("4 for Division");
 
-        int Choose = scan.nxtint();
+        int Choose = scan.nxtInt();
 
         System.out.println("Enter two numbers");
         int x = scan.nextInt();
