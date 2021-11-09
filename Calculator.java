@@ -1,60 +1,51 @@
 import java.util.Scanner;
 
-class calculator {
-    public static void main(string args[]) {
-        Scanner scan = new scanner(System.in);
+public class Calculator {
 
-        System.out.println("Choose your operation");
-        System.out.println("1 for addition");
-        System.out.println("2 for subtraction");
-        System.out.println("3 for Multiplication");
-        System.out.println("4 for Division");
+    public static void main(String[] args) {
 
-        int Choose = scan.nxtInt();
+        double num1 = 0.0, num2 = 0.0;
+        char operator = '\0';
 
-        System.out.println("Enter two numbers");
-        int x = scan.nextInt();
-        int y = scan.nextInt();
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter two numbers: ");
+        num1 = scan.nextDouble();
+        num2 = scan.nextDouble();
 
-        if (choose == 1) {
-            System.out.println("The answer is: " + add(x, y));
-        } else if (choose == 2) {
-            System.out.println("The answer is: " + sub(x, y));
-        } else if (choose == 3) {
-            System.out.println("The answer is: " + mul(x, y));
-        } else if (choose == 4) {
-            System.out.println("The answer is: " + div(x, y));
-        } else {
-            System.out.println("Error");
+        System.out.println("Available Operators" + "are::  (+ - * / % ^)");
+        System.out.print("Enter operator: ");
+        operator = scan.next().charAt(0);
+
+        switch (operator) {
+
+        case '+':
+            System.out.println("Result = " + (num1 + num2));
+            break;
+
+        case '-':
+            System.out.println("Result = " + (num1 - num2));
+            break;
+
+        case '*':
+            System.out.println("Result = " + (num1 * num2));
+            break;
+
+        case '/':
+            System.out.println("Result = " + (num1 / num2));
+            break;
+
+        case '%':
+            System.out.println("Result = " + (num1 % num2));
+            break;
+
+        case '^':
+            System.out.println("Result = " + Math.pow(num1, num2));
+            break;
+
+        default:
+            System.out.println("Invalid operator");
         }
-
-    }
-
-    public static int add(int x, int y) {
-        int n;
-        n = x + y;
-        return n;
-
-    }
-
-    public static int sub(int x, int y) {
-        int n;
-        n = x - y;
-        return n;
-
-    }
-
-    public static int mul(int x, int y) {
-        int n;
-        n = x * y;
-        return n;
-
-    }
-
-    public static int div(int x, int y) {
-        int n;
-        n = x / y;
-        return n;
+        scan.close();
 
     }
 }
